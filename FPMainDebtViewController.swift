@@ -12,6 +12,9 @@ import CoreData
 
 class FPMainDebtViewController: UIViewController {
     
+    
+    var indexPath:NSIndexPath?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
