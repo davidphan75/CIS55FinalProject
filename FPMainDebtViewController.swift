@@ -25,6 +25,10 @@ class FPMainDebtViewController: UIViewController {
     }
     
     
+    
+    
+    //Core Data
+    
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         if let managedObjectContext = appDelegate.managedObjectContext {
