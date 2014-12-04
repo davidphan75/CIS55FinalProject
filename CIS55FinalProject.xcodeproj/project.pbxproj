@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivideTableViewController.swift; sourceTree = "<group>"; };
+		63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DivideTableViewController.swift; path = ../DivideTableViewController.swift; sourceTree = "<group>"; };
 		B17780BD1A2152AA00C9822B /* CIS55FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIS55FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17780C11A2152AA00C9822B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B17780C21A2152AA00C9822B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,7 +87,6 @@
 		B17780B41A2152AA00C9822B = {
 			isa = PBXGroup;
 			children = (
-				63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */,
 				B17780BF1A2152AA00C9822B /* CIS55FinalProject */,
 				B17780D81A2152AB00C9822B /* CIS55FinalProjectTests */,
 				B17780BE1A2152AA00C9822B /* Products */,
@@ -108,6 +107,7 @@
 			children = (
 				B17780C21A2152AA00C9822B /* AppDelegate.swift */,
 				B17780C91A2152AA00C9822B /* Main.storyboard */,
+				63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */,
 				B1CC846E1A2CF902001435C3 /* FPDebtAddPersonViewController.swift */,
 				B1CC845E1A2C71B2001435C3 /* FPDebtTableViewController.swift */,
 				B1CC845A1A2C70DB001435C3 /* FPDebtCollectionViewController.swift */,

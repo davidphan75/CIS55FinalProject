@@ -499,6 +499,7 @@
                             <outlet property="delegate" destination="Qc0-UP-smj" id="LRQ-Pv-ztG"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Divide" id="dtL-CU-FHC"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="hgF-NG-C7c"/>
                     <connections>
                         <outlet property="BillPerPersonLabel" destination="zg9-Bz-nac" id="EM4-l2-GCb"/>
@@ -509,25 +510,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRW-Z5-cKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976" y="-464"/>
-        </scene>
-        <!--Divide-->
-        <scene sceneID="5k2-Hb-NB7">
-            <objects>
-                <navigationController id="jXZ-hN-ETk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Divide" id="2is-QO-Yrp"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Wx-gi-fGB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Qc0-UP-smj" kind="relationship" relationship="rootViewController" id="KeT-fb-gIO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPe-Az-j4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="157" y="-464"/>
+            <point key="canvasLocation" x="157" y="-454"/>
         </scene>
         <!--Dutch-->
         <scene sceneID="kpz-7c-CI4">
@@ -553,13 +536,13 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="jhg-Fy-zKM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="v2x-El-5Af">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="jXZ-hN-ETk" kind="relationship" relationship="viewControllers" id="f8q-Da-qop"/>
+                        <segue destination="Qc0-UP-smj" kind="relationship" relationship="viewControllers" id="p9h-KM-ZKa"/>
                         <segue destination="ayV-RP-5aG" kind="relationship" relationship="viewControllers" id="x8C-Hb-riF"/>
                         <segue destination="Elj-Ob-8Ez" kind="relationship" relationship="viewControllers" id="HLV-ub-Jft"/>
                     </connections>
