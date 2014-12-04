@@ -12,6 +12,9 @@ import CoreData
 
 class FPMainDebtViewController: UIViewController {
     
+    
+    var indexPath:NSIndexPath?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,10 @@ class FPMainDebtViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
+    //Core Data
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate

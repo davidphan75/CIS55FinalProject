@@ -77,21 +77,18 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionCell", forIndexPath: indexPath) as FPDebtPersonCollectionViewCell
     
         // Configure the cell
-        //cell.backgroundColor = UIColor.whiteColor()
         
         var orientation: UIImageOrientation = .Up
         let cImage = CIImage(data: (fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt).picture)
         let newImage = UIImage(CIImage: cImage, scale: 2, orientation: orientation)
-
-        
-        
-        //println(rotatedImage?.imageOrientation)
-        
-        //cell.cellPicture.image = UIImage(data:(fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt).picture)
-        
         cell.cellPicture.image = newImage
     
         return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println((fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt).name)
+
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
