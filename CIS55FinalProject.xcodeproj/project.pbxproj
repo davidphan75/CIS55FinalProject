@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63BF8D9C1A2E4035002C5EA6 /* DivideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */; };
 		B17780C31A2152AA00C9822B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17780C21A2152AA00C9822B /* AppDelegate.swift */; };
 		B17780C61A2152AA00C9822B /* CIS55FinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B17780C41A2152AA00C9822B /* CIS55FinalProject.xcdatamodeld */; };
 		B17780CB1A2152AA00C9822B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17780C91A2152AA00C9822B /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DivideTableViewController.swift; sourceTree = "<group>"; };
 		B17780BD1A2152AA00C9822B /* CIS55FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIS55FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17780C11A2152AA00C9822B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B17780C21A2152AA00C9822B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		B17780B41A2152AA00C9822B = {
 			isa = PBXGroup;
 			children = (
+				63BF8D9B1A2E4035002C5EA6 /* DivideTableViewController.swift */,
 				B17780BF1A2152AA00C9822B /* CIS55FinalProject */,
 				B17780D81A2152AB00C9822B /* CIS55FinalProjectTests */,
 				B17780BE1A2152AA00C9822B /* Products */,
@@ -261,6 +264,7 @@
 				B17780EA1A2158F900C9822B /* FPPerson.swift in Sources */,
 				B17780E61A21582F00C9822B /* FPMainViewController.swift in Sources */,
 				B177812D1A240D4C00C9822B /* FPOrderObject.swift in Sources */,
+				63BF8D9C1A2E4035002C5EA6 /* DivideTableViewController.swift in Sources */,
 				B1CC846D1A2C83A8001435C3 /* FPPersonDebt.swift in Sources */,
 				B1CC84721A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift in Sources */,
 				B1CC84571A2BFFB9001435C3 /* FPDisplayBillViewController.swift in Sources */,
