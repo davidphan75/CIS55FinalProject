@@ -87,7 +87,7 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        println((fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt).name)
 
     }
     
