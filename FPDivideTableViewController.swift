@@ -31,6 +31,7 @@ class DivideTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,11 +51,20 @@ class DivideTableViewController: UITableViewController {
         return true;
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
-    {
-        BillTotalText.resignFirstResponder()
-        TipText.resignFirstResponder()
-        NumberPeopleText.resignFirstResponder() 
+    override func viewDidAppear(animated: Bool) {
+        
+        var nav = self.navigationController?.navigationBar
+        
+        nav?.barStyle = UIBarStyle.Black
+        nav?.tintColor = UIColor.yellowColor()
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "logo.png")
+        imageView.image = image
+        
+        navigationItem.titleView = imageView
     }
 
 
