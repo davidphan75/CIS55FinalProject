@@ -37,7 +37,7 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
         //self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
         
         var nib = UINib(nibName: "FPDebtPersonCollectionViewCell", bundle: nil)
-        collectionView.registerNib(nib, forCellWithReuseIdentifier: "collectionCell")
+        collectionView?.registerNib(nib, forCellWithReuseIdentifier: "collectionCell")
        
 
         // Do any additional setup after loading the view.
@@ -92,7 +92,7 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
-        collectionView.reloadData()
+        collectionView?.reloadData()
     }
     
     //----------------- Core Data -----------------

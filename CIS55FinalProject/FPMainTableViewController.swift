@@ -85,7 +85,7 @@ class FPMainTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        cell.textLabel.text = peoples[indexPath.row].name
+        cell.textLabel?.text = peoples[indexPath.row].name
 
         return cell
     }

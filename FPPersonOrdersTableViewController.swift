@@ -112,7 +112,7 @@ class FPPersonOrdersTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("orderCell", forIndexPath: indexPath) as UITableViewCell
 
         // Configure the cell...
-        cell.textLabel.text = self.person?.orderList[indexPath.row].orderName
+        cell.textLabel?.text = self.person?.orderList[indexPath.row].orderName
 
         return cell
     }
