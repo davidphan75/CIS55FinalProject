@@ -27,6 +27,7 @@
 		B1CC846F1A2CF902001435C3 /* FPDebtAddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC846E1A2CF902001435C3 /* FPDebtAddPersonViewController.swift */; };
 		B1CC84721A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC84701A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift */; };
 		B1CC84731A2D4728001435C3 /* FPDebtPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CC84711A2D4728001435C3 /* FPDebtPersonCollectionViewCell.xib */; };
+		B70D16591A3242D4007E723D /* FPTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D16581A3242D4007E723D /* FPTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B1CC846E1A2CF902001435C3 /* FPDebtAddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDebtAddPersonViewController.swift; sourceTree = "<group>"; };
 		B1CC84701A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDebtPersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1CC84711A2D4728001435C3 /* FPDebtPersonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPDebtPersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		B70D16581A3242D4007E723D /* FPTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				B17780C21A2152AA00C9822B /* AppDelegate.swift */,
 				B17780C91A2152AA00C9822B /* Main.storyboard */,
+				B70D16581A3242D4007E723D /* FPTabBarViewController.swift */,
 				63BF8D9B1A2E4035002C5EA6 /* FPDivideTableViewController.swift */,
 				B1CC846E1A2CF902001435C3 /* FPDebtAddPersonViewController.swift */,
 				B1CC845E1A2C71B2001435C3 /* FPDebtTableViewController.swift */,
@@ -263,6 +266,7 @@
 				B1CC845B1A2C70DB001435C3 /* FPDebtCollectionViewController.swift in Sources */,
 				B17780EA1A2158F900C9822B /* FPPerson.swift in Sources */,
 				B17780E61A21582F00C9822B /* FPMainViewController.swift in Sources */,
+				B70D16591A3242D4007E723D /* FPTabBarViewController.swift in Sources */,
 				B177812D1A240D4C00C9822B /* FPOrderObject.swift in Sources */,
 				63BF8D9C1A2E4035002C5EA6 /* FPDivideTableViewController.swift in Sources */,
 				B1CC846D1A2C83A8001435C3 /* FPPersonDebt.swift in Sources */,
