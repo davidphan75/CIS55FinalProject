@@ -12,6 +12,7 @@ import CoreData
 let reuseIdentifier = "Cell"
 
 class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResultsControllerDelegate{
+    /*
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -22,6 +23,7 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
         }
         }()
 
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,7 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
 
         // Do any additional setup after loading the view.
     }
+    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -143,4 +146,8 @@ class FPDebtCollectionViewController: UICollectionViewController, NSFetchedResul
     }
     */
 
+*/
+
 }
+
+

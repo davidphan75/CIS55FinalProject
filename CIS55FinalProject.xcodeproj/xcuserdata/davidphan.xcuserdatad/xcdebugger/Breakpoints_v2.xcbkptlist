@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CIS55FinalProject/FPMainTableViewController.swift"
-            timestampString = "438676818.980596"
+            timestampString = "439461603.803535"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "addButton(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,13 +74,115 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FPMainDebtViewController.swift"
-            timestampString = "439353775.710523"
+            timestampString = "439459912.766275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "FPMainDebtViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CIS55FinalProject.FPMainDebtViewController.fetchedResultsController.getter : ObjectiveC.NSFetchedResultsController"
+                  moduleName = "CIS55FinalProject"
+                  urlString = "file:///Users/davidphan/Documents/AppDevelopment/CIS55FinalProject/FPMainDebtViewController.swift"
+                  timestampString = "439444408.230421"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CIS55FinalProject.FPMainDebtViewController.fetchedResultsController.setter : ObjectiveC.NSFetchedResultsController"
+                  moduleName = "CIS55FinalProject"
+                  urlString = "file:///Users/davidphan/Documents/AppDevelopment/CIS55FinalProject/FPMainDebtViewController.swift"
+                  timestampString = "439444408.230761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CIS55FinalProject.FPMainDebtViewController.fetchedResultsController.materializeForSet : ObjectiveC.NSFetchedResultsController"
+                  moduleName = "CIS55FinalProject"
+                  urlString = "file:///Users/davidphan/Documents/AppDevelopment/CIS55FinalProject/FPMainDebtViewController.swift"
+                  timestampString = "439444408.231037"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CIS55FinalProject.FPMainDebtViewController.init (CIS55FinalProject.FPMainDebtViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; CIS55FinalProject.FPMainDebtViewController"
+                  moduleName = "CIS55FinalProject"
+                  urlString = "file:///Users/davidphan/Documents/AppDevelopment/CIS55FinalProject/FPMainDebtViewController.swift"
+                  timestampString = "439444408.231288"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CIS55FinalProject.FPMainDebtViewController.init (CIS55FinalProject.FPMainDebtViewController.Type)() -&gt; CIS55FinalProject.FPMainDebtViewController"
+                  moduleName = "CIS55FinalProject"
+                  urlString = "file:///Users/davidphan/Documents/AppDevelopment/CIS55FinalProject/FPMainDebtViewController.swift"
+                  timestampString = "439444408.231537"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CIS55FinalProject.FPMainDebtViewController.init (CIS55FinalProject.FPMainDebtViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; CIS55FinalProject.FPMainDebtViewController"
+                  moduleName = "CIS55FinalProject"
+                  urlString = "file:///Users/davidphan/Documents/AppDevelopment/CIS55FinalProject/FPMainDebtViewController.swift"
+                  timestampString = "439444408.231802"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FPMainDebtViewController.swift"
+            timestampString = "439459912.766275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "collectionView(_:didSelectItemAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

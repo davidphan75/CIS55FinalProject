@@ -52,6 +52,7 @@ class FPMainTableViewController: UITableViewController {
 
     @IBAction func addButton(sender: AnyObject) {
         
+        
         var inputTextField:UITextField?
         
         let alertController = UIAlertController(title: "Add New Person", message: "What is the persons name", preferredStyle: UIAlertControllerStyle.Alert)
@@ -77,7 +78,7 @@ class FPMainTableViewController: UITableViewController {
         alertController.addAction(cancel)
         
         self.presentViewController(alertController, animated: true, completion: nil)
-        
+
         
     }
     

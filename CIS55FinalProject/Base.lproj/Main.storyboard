@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jhg-Fy-zKM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jhg-Fy-zKM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -88,7 +88,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0z-bX-2cq">
                                 <rect key="frame" x="0.0" y="123" width="600" height="477"/>
                                 <connections>
-                                    <segue destination="Odu-1F-Ie1" kind="embed" id="Lm2-W7-mu1"/>
+                                    <segue destination="Odu-1F-Ie1" kind="embed" id="FIR-uX-bw9"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -171,7 +171,7 @@
             <objects>
                 <collectionViewController id="DPj-la-Ybd" customClass="FPDebtCollectionViewController" customModule="CIS55FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lJ2-nJ-jdV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pVf-Cz-vlZ">
                             <size key="itemSize" width="114" height="122"/>
@@ -198,14 +198,14 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAe-jL-Cg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="1400.5"/>
+            <point key="canvasLocation" x="2467" y="1732"/>
         </scene>
         <!--Debt Table View Controller-->
         <scene sceneID="6yv-x7-LgO">
             <objects>
                 <tableViewController id="xQ6-EC-Olc" customClass="FPDebtTableViewController" customModule="CIS55FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Umo-iw-o4P">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="407"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -323,7 +323,7 @@
         <!--Main Debt View Controller-->
         <scene sceneID="dbT-2w-0rI">
             <objects>
-                <viewController id="tNg-gX-Sc5" customClass="FPMainDebtViewController" customModule="CIS55FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tNg-gX-Sc5" customClass="FPMainDebtViewController" customModule="CIS55FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bgt-tv-9K6"/>
                         <viewControllerLayoutGuide type="bottom" id="4wU-LS-vQT"/>
@@ -332,29 +332,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ko-hz-PH8">
-                                <rect key="frame" x="0.0" y="193" width="600" height="407"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sB4-pG-IsI">
+                                <rect key="frame" x="0.0" y="183" width="600" height="368"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="54" id="ec3-Fk-eO7">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ec3-Fk-eO7" id="Hcu-0z-03u">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <segue destination="xQ6-EC-Olc" kind="embed" id="f6W-e3-jWw"/>
+                                    <outlet property="dataSource" destination="tNg-gX-Sc5" id="I8V-sA-Hmk"/>
+                                    <outlet property="delegate" destination="tNg-gX-Sc5" id="Uac-3y-55T"/>
                                 </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eji-Xh-t9v">
-                                <rect key="frame" x="0.0" y="64" width="600" height="129"/>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-nZ-m3g">
+                                <rect key="frame" x="0.0" y="64" width="600" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="MwT-fO-201"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wNZ-mr-4Rv">
+                                    <size key="itemSize" width="75" height="75"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ylt-o3-HLS">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="DPj-la-Ybd" kind="embed" id="jgT-EA-W8m"/>
+                                    <outlet property="dataSource" destination="tNg-gX-Sc5" id="A5W-wa-DKP"/>
+                                    <outlet property="delegate" destination="tNg-gX-Sc5" id="WIr-nN-UWO"/>
                                 </connections>
-                            </containerView>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDO-SE-F7Q">
+                                <rect key="frame" x="0.0" y="139" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="dD2-G3-MDA">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mqf-of-a65">
+                                            <connections>
+                                                <action selector="addDebt:" destination="tNg-gX-Sc5" id="DNx-fH-vzk"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0ko-hz-PH8" firstAttribute="trailing" secondItem="Eji-Xh-t9v" secondAttribute="trailing" id="FYS-Yh-STd"/>
-                            <constraint firstItem="Eji-Xh-t9v" firstAttribute="top" secondItem="Bgt-tv-9K6" secondAttribute="bottom" id="RRn-nA-Tv3"/>
-                            <constraint firstItem="0ko-hz-PH8" firstAttribute="top" secondItem="tOk-bu-Pan" secondAttribute="top" constant="193" id="aBU-ih-5vy"/>
-                            <constraint firstItem="0ko-hz-PH8" firstAttribute="top" secondItem="Eji-Xh-t9v" secondAttribute="bottom" id="go3-Q0-V0D"/>
-                            <constraint firstItem="Eji-Xh-t9v" firstAttribute="leading" secondItem="0ko-hz-PH8" secondAttribute="leading" id="qmF-Sj-BEE"/>
-                            <constraint firstItem="Eji-Xh-t9v" firstAttribute="leading" secondItem="tOk-bu-Pan" secondAttribute="leading" id="wiK-25-zS4"/>
-                            <constraint firstAttribute="trailing" secondItem="0ko-hz-PH8" secondAttribute="trailing" id="yvy-fE-e1X"/>
-                            <constraint firstAttribute="bottom" secondItem="0ko-hz-PH8" secondAttribute="bottom" id="zgm-fI-KDy"/>
+                            <constraint firstItem="sB4-pG-IsI" firstAttribute="bottom" secondItem="4wU-LS-vQT" secondAttribute="top" id="0wt-ND-Uol"/>
+                            <constraint firstItem="Qcb-nZ-m3g" firstAttribute="top" secondItem="Bgt-tv-9K6" secondAttribute="bottom" id="DTT-g1-WqH"/>
+                            <constraint firstAttribute="trailing" secondItem="cDO-SE-F7Q" secondAttribute="trailing" id="LKt-3N-LAv"/>
+                            <constraint firstItem="cDO-SE-F7Q" firstAttribute="leading" secondItem="sB4-pG-IsI" secondAttribute="leading" id="LVs-sc-w7r"/>
+                            <constraint firstItem="sB4-pG-IsI" firstAttribute="leading" secondItem="tOk-bu-Pan" secondAttribute="leading" id="OkH-Ya-pH7"/>
+                            <constraint firstItem="Qcb-nZ-m3g" firstAttribute="leading" secondItem="cDO-SE-F7Q" secondAttribute="leading" id="Tl8-Z0-zis"/>
+                            <constraint firstItem="sB4-pG-IsI" firstAttribute="top" secondItem="cDO-SE-F7Q" secondAttribute="bottom" id="hrG-VA-Pyv"/>
+                            <constraint firstItem="cDO-SE-F7Q" firstAttribute="top" secondItem="Qcb-nZ-m3g" secondAttribute="bottom" id="jvG-8s-OXW"/>
+                            <constraint firstItem="cDO-SE-F7Q" firstAttribute="trailing" secondItem="Qcb-nZ-m3g" secondAttribute="trailing" id="naX-Vs-Dla"/>
+                            <constraint firstItem="sB4-pG-IsI" firstAttribute="trailing" secondItem="cDO-SE-F7Q" secondAttribute="trailing" id="x41-HO-skD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IaR-07-GWD">
@@ -364,10 +410,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="debtCollectionView" destination="Qcb-nZ-m3g" id="Q2f-EJ-nUQ"/>
+                        <outlet property="debtTableView" destination="sB4-pG-IsI" id="9CA-Yl-aZp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMT-dS-qcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="1636"/>
+            <point key="canvasLocation" x="969" y="1648"/>
         </scene>
         <!--Person Orders Table View Controller-->
         <scene sceneID="VMO-zC-ndM">

@@ -12,6 +12,8 @@ import CoreData
 
 class FPDebtTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
+    /*
+    
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         if let managedObjectContext = appDelegate.managedObjectContext {
@@ -21,6 +23,7 @@ class FPDebtTableViewController: UITableViewController, NSFetchedResultsControll
         }
         }()
 
+    /*
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +33,7 @@ class FPDebtTableViewController: UITableViewController, NSFetchedResultsControll
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,24 +56,7 @@ class FPDebtTableViewController: UITableViewController, NSFetchedResultsControll
     }
     
     
-    //----------------- Core Data -----------------
     
-    var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
-    
-    func getFetchedResultsController() -> NSFetchedResultsController {
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: TDCoreObjectFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
-        return fetchedResultsController
-    }
-    
-    func TDCoreObjectFetchRequest() -> NSFetchRequest {
-        let fetchRequest = NSFetchRequest(entityName: "FPPersonDebt")
-        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        return fetchRequest
-    }
-    
-    
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
@@ -77,7 +64,7 @@ class FPDebtTableViewController: UITableViewController, NSFetchedResultsControll
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -113,6 +100,26 @@ class FPDebtTableViewController: UITableViewController, NSFetchedResultsControll
         return true
     }
     */
+    
+    
+    //----------------- Core Data -----------------
+    
+    var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
+    
+    func getFetchedResultsController() -> NSFetchedResultsController {
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: TDCoreObjectFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultsController
+    }
+    
+    func TDCoreObjectFetchRequest() -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: "FPPersonDebt")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+    
+    
+
 
     /*
     // MARK: - Navigation
@@ -123,5 +130,5 @@ class FPDebtTableViewController: UITableViewController, NSFetchedResultsControll
         // Pass the selected object to the new view controller.
     }
     */
-
+*/
 }

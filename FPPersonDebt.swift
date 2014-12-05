@@ -13,9 +13,9 @@ class FPPersonDebt: NSManagedObject {
 
     @NSManaged var picture: NSData
     @NSManaged var name: String
-    @NSManaged var arrayData: String
+    @NSManaged var arrayData: NSData
     
-    class func createInManagedObjectContext(moc: NSManagedObjectContext, arrayData:String, name:String, picture:NSData) -> FPPersonDebt {
+    class func createInManagedObjectContext(moc: NSManagedObjectContext, arrayData:NSData, name:String, picture:NSData) -> FPPersonDebt {
         
         let newItem = NSEntityDescription.insertNewObjectForEntityForName("FPPersonDebt", inManagedObjectContext: moc) as FPPersonDebt
         

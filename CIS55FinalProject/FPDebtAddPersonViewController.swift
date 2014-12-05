@@ -50,7 +50,9 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
     
     @IBAction func savePerson(sender: AnyObject) {
         let imageData = UIImagePNGRepresentation(self.picture.image)
-        FPPersonDebt.createInManagedObjectContext(self.managedObjectContext!, arrayData: "", name: self.nameInput.text, picture: imageData)
+        var array = [String]()
+        let arrayData = NSKeyedArchiver.archivedDataWithRootObject(array)
+        FPPersonDebt.createInManagedObjectContext(self.managedObjectContext!, arrayData: arrayData, name: self.nameInput.text, picture: imageData)
         dismissViewControllerAnimated(true, completion: nil)
 
     }
