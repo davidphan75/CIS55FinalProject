@@ -8,7 +8,11 @@
 
 import UIKit
 
-class FPPersonOrdersTableViewController: UITableViewController {
+class FPPersonOrdersTableViewController: UITableViewController, UINavigationBarDelegate {
+    
+    @IBOutlet weak var naviBar: UINavigationBar!
+    @IBOutlet weak var naviItem: UINavigationItem!
+    var titleString:String = ""
     
     var person:FPPerson?
     
@@ -28,6 +32,22 @@ class FPPersonOrdersTableViewController: UITableViewController {
         var nib = UINib(nibName: "FPDutchOrderTableViewCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "dutchOrder")
         self.tableView.rowHeight = 50
+        
+        // Do any additional setup after loading the view.
+        var nav = self.navigationController?.navigationBar
+        
+        nav?.barStyle = UIBarStyle.Black
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "logo.png")
+        imageView.image = image
+        
+        navigationItem.titleView = imageView
+        
+        naviItem.title = titleString
+
         
 
     }

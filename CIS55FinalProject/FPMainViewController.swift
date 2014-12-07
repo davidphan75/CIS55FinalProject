@@ -180,7 +180,7 @@ class FPMainViewController: UIViewController, UITableViewDelegate {
         if(segue.identifier == "showOrders"){
             let vc = segue.destinationViewController as FPPersonOrdersTableViewController
             //vc.tabBarItem.title = self.peoples[(path?.row)!].name
-            vc.navigationItem.title = "\(self.peoples[(path?.row)!].name)'s orders"
+            vc.titleString = "\(self.peoples[(path?.row)!].name)'s orders"
             vc.person = self.peoples[(path?.row)!]
         }else if(segue.identifier == "showBill"){
             let vc = segue.destinationViewController as FPDisplayBillViewController
