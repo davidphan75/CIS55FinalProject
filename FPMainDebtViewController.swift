@@ -10,9 +10,10 @@ import UIKit
 import CoreData
 
 
-class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, NSFetchedResultsControllerDelegate, UIPickerViewDelegate{
+class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, NSFetchedResultsControllerDelegate, UIPickerViewDelegate, UIGestureRecognizerDelegate{
     
     
+    @IBOutlet weak var lowerNavBar: UINavigationBar!
     @IBOutlet weak var debtCollectionView: UICollectionView!
     @IBOutlet weak var debtTableView: UITableView!
     var debtPicker = UIPickerView()
@@ -32,9 +33,28 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         fetchedResultsController.performFetch(nil)
         
         var nib = UINib(nibName: "FPDebtPersonCollectionViewCell", bundle: nil)
+        var nib2 = UINib(nibName: "FPDebtTableViewCell", bundle: nil)
         debtCollectionView?.registerNib(nib, forCellWithReuseIdentifier: "collectionCell")
+        debtTableView?.registerNib(nib2, forCellReuseIdentifier: "debtTableCell")
         
         self.createPickerView()
+        debtTableView.rowHeight = 50
+        
+        var nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.Black
+        //lowerNavBar.barStyle = UIBarStyle.Black
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "logo.png")
+        imageView.image = image
+        
+        navigationItem.titleView = imageView
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressHandler:")
+        debtCollectionView.addGestureRecognizer(longPressGestureRecognizer)
+        longPressGestureRecognizer.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -51,7 +71,7 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         var inputDebtAmount:UITextField?
 
         
-        let alertController = UIAlertController(title: "Add New Person", message: "What is the persons name", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Add New Debt", message: "Enter debt, amount and type", preferredStyle: UIAlertControllerStyle.Alert)
         
         alertController.addTextFieldWithConfigurationHandler { (textField) in
             textField.placeholder = "Name"
@@ -110,6 +130,8 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
 
     }
     
+    //Mark ------------------------------PickerViews
+    
     func createPickerView(){
         
         debtPicker.delegate = self
@@ -130,7 +152,9 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       self.inputDebtType?.text = self.debtOptions[row]
+        self.inputDebtType?.text = self.debtOptions[row]
+        
+        
     }
 
     
@@ -154,10 +178,19 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         
         // Configure the cell
         
+        let person = (fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt)
         var orientation: UIImageOrientation = .Up
-        let cImage = CIImage(data: (fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt).picture)
+        let cImage = CIImage(data: person.picture)
         let newImage = UIImage(CIImage: cImage, scale: 2, orientation: orientation)
         cell.cellPicture.image = newImage
+        cell.cellPicture.layer.cornerRadius = cell.cellPicture.frame.size.width / 2
+        cell.cellPicture.clipsToBounds = true
+        if(indexPath == self.indexPath){
+            cell.cellPicture.layer.opacity = 1
+        }else{
+            cell.cellPicture.layer.opacity = 0.65
+        }
+        cell.cellName.text = person.name.uppercaseString
         
         return cell
     }
@@ -166,12 +199,41 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         println((fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt).name)
         let PersonDebt = (fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt)
         self.debtArray = (NSKeyedUnarchiver.unarchiveObjectWithData(PersonDebt.arrayData) as Array)
-        self.indexPath = indexPath
+        
+        //self.lowerNavBar.topItem?.title = "\(PersonDebt.name)'s Debts'"
+        var barTitle = ""
+        for char in PersonDebt.name{
+            barTitle += " \(char)"
+        }
+        barTitle += " S   D E B T S"
+        self.lowerNavBar.topItem?.title = barTitle.uppercaseString
+        
         self.debtTableView.reloadData()
+        if((self.indexPath) != nil){
+            (collectionView.cellForItemAtIndexPath(self.indexPath!) as FPDebtPersonCollectionViewCell).cellPicture.layer.opacity = 0.65
+        }
+        (collectionView.cellForItemAtIndexPath(indexPath) as FPDebtPersonCollectionViewCell).cellPicture.layer.opacity = 1
+        self.indexPath = indexPath
     }
     
     func controllerDidChangeContent(controller: NSFetchedResultsController!) {
         debtCollectionView?.reloadData()
+        debtTableView?.reloadData()
+    }
+    
+    
+    //Mark ----------------------Guesture Controlls
+    
+    
+    func longPressHandler(sender:UILongPressGestureRecognizer){
+        if(sender.state == UIGestureRecognizerState.Began){
+            var tapLocation:CGPoint = sender.locationInView(debtCollectionView)
+            let indexPath = debtCollectionView.indexPathForItemAtPoint(tapLocation)
+            println(indexPath?.row)
+            
+            let context = fetchedResultsController.managedObjectContext
+            context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath!) as NSManagedObject)
+        }
     }
     
     // MARK: -------------------- Table view data source
@@ -194,15 +256,81 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
     }
     
     
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> FPDebtTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("debtTableCell", forIndexPath: indexPath) as FPDebtTableViewCell
         
         // Configure the cell...
-        cell.textLabel?.text = (debtArray[indexPath.row])
+        //cell.textLabel?.text = (debtArray[indexPath.row])
+        let fullString = debtArray[indexPath.row]
+        var splitString = fullString.componentsSeparatedByString(" ")
+        cell.cellName.text = splitString[1].uppercaseString
+        cell.cellAmount.text = splitString[0]
+        cell.cellAmount.textColor = UIColor.whiteColor()
+        cell.cellAmount.layer.cornerRadius = cell.cellAmount.frame.size.height / 2
+        cell.cellAmount.clipsToBounds = true
+        if(Array(splitString[0])[0] == "-"){
+            cell.cellAmount.backgroundColor = UIColor.grayColor()
+        }else{
+            cell.cellAmount.backgroundColor = UIColor.greenColor()
+        }
          
         return cell
     }
+
+ 
     
+    // Override to support conditional editing of the table view.
+     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return NO if you do not want the specified item to be editable.
+    return true
+    }
+    
+    
+    
+    // Override to support editing the table view.
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            //let context = fetchedResultsController.managedObjectContext
+            //context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+            debtArray.removeAtIndex(indexPath.row)
+            let data = NSKeyedArchiver.archivedDataWithRootObject(debtArray)
+            let PersonDebt = (fetchedResultsController.objectAtIndexPath(self.indexPath!) as FPPersonDebt)
+            PersonDebt.arrayData = data
+            //tableView.reloadData()
+            
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    
+    func spaceOutWord(word:String)->String{
+        var spacedWord:String = ""
+        for thisChar in word{
+            spacedWord += " \(thisChar)"
+        }
+        return spacedWord
+    }
+    
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    
+    }
+    */
+    
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return NO if you do not want the item to be re-orderable.
+    return true
+    }
+    */
+
     
     
     //-----------------------------Core Data

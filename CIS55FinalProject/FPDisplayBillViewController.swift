@@ -9,19 +9,39 @@
 import UIKit
 import Foundation
 
-class FPDisplayBillViewController: UIViewController {
+class FPDisplayBillViewController: UIViewController, UINavigationBarDelegate {
     
     var peoples = [FPPerson]()
     var tax:Double?
     var tip:Double?
     var bill:String = ""
     @IBOutlet weak var BillTextView: UITextView!
+    @IBOutlet weak var naviBar: UINavigationBar!
+    @IBOutlet weak var naviItem: UINavigationItem!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         createBill()
 
         // Do any additional setup after loading the view.
+        //var nav = self.navigationController?.navigationBar
+        
+        naviBar.barStyle = UIBarStyle.Black
+        //nav?.tintColor = UIColor.yellowColor()
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "logo.png")
+        imageView.image = image
+        
+        naviItem.titleView = imageView
+        
+        //navigationItem.titleView = imageView
+
+        
+ 
     }
 
     override func didReceiveMemoryWarning() {

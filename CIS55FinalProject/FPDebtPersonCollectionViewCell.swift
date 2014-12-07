@@ -11,6 +11,7 @@ import UIKit
 class FPDebtPersonCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var cellPicture: UIImageView!
+    @IBOutlet weak var cellName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

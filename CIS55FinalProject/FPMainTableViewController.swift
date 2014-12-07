@@ -11,16 +11,26 @@ import UIKit
 
 class FPMainTableViewController: UITableViewController {
     
+    @IBOutlet weak var naviBar: UINavigationBar!
     var peoples = [FPPerson]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        var nib = UINib(nibName: "FPDutchPersonTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "dutchPersonCell")
+        self.tableView.rowHeight = 50
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //naviBar.barStyle = UIBarStyle.Black
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,11 +92,11 @@ class FPMainTableViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("peopleCell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> FPDutchPersonTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("dutchPersonCell", forIndexPath: indexPath) as FPDutchPersonTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = peoples[indexPath.row].name
+        cell.cellName.text = peoples[indexPath.row].name.uppercaseString
 
         return cell
     }
@@ -113,7 +123,9 @@ class FPMainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.peoples.removeAtIndex(indexPath.row)
+            tableView.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

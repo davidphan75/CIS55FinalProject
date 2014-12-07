@@ -18,6 +18,12 @@
 		B17780E81A21586F00C9822B /* FPMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17780E71A21586F00C9822B /* FPMainTableViewController.swift */; };
 		B17780EA1A2158F900C9822B /* FPPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17780E91A2158F900C9822B /* FPPerson.swift */; };
 		B177812D1A240D4C00C9822B /* FPOrderObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B177812C1A240D4C00C9822B /* FPOrderObject.swift */; };
+		B1811A8D1A329EE6003C8ADD /* FPDebtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1811A8B1A329EE6003C8ADD /* FPDebtTableViewCell.swift */; };
+		B1811A8E1A329EE6003C8ADD /* FPDebtTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1811A8C1A329EE6003C8ADD /* FPDebtTableViewCell.xib */; };
+		B1811A911A33E7C2003C8ADD /* FPDutchPersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1811A8F1A33E7C2003C8ADD /* FPDutchPersonTableViewCell.swift */; };
+		B1811A921A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1811A901A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib */; };
+		B1811A951A33E973003C8ADD /* FPDutchOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1811A931A33E973003C8ADD /* FPDutchOrderTableViewCell.swift */; };
+		B1811A961A33E973003C8ADD /* FPDutchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1811A941A33E973003C8ADD /* FPDutchOrderTableViewCell.xib */; };
 		B1B34A741A3145AE001516B3 /* FPDebtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B34A731A3145AE001516B3 /* FPDebtObject.swift */; };
 		B1CC84551A2592F1001435C3 /* FPPersonOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC84541A2592F1001435C3 /* FPPersonOrdersTableViewController.swift */; };
 		B1CC84571A2BFFB9001435C3 /* FPDisplayBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC84561A2BFFB9001435C3 /* FPDisplayBillViewController.swift */; };
@@ -57,6 +63,12 @@
 		B17780E71A21586F00C9822B /* FPMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPMainTableViewController.swift; sourceTree = "<group>"; };
 		B17780E91A2158F900C9822B /* FPPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPPerson.swift; sourceTree = "<group>"; };
 		B177812C1A240D4C00C9822B /* FPOrderObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPOrderObject.swift; path = ../FPOrderObject.swift; sourceTree = "<group>"; };
+		B1811A8B1A329EE6003C8ADD /* FPDebtTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDebtTableViewCell.swift; sourceTree = "<group>"; };
+		B1811A8C1A329EE6003C8ADD /* FPDebtTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPDebtTableViewCell.xib; sourceTree = "<group>"; };
+		B1811A8F1A33E7C2003C8ADD /* FPDutchPersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDutchPersonTableViewCell.swift; sourceTree = "<group>"; };
+		B1811A901A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPDutchPersonTableViewCell.xib; sourceTree = "<group>"; };
+		B1811A931A33E973003C8ADD /* FPDutchOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDutchOrderTableViewCell.swift; sourceTree = "<group>"; };
+		B1811A941A33E973003C8ADD /* FPDutchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPDutchOrderTableViewCell.xib; sourceTree = "<group>"; };
 		B1B34A731A3145AE001516B3 /* FPDebtObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDebtObject.swift; sourceTree = "<group>"; };
 		B1CC84541A2592F1001435C3 /* FPPersonOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPPersonOrdersTableViewController.swift; path = ../FPPersonOrdersTableViewController.swift; sourceTree = "<group>"; };
 		B1CC84561A2BFFB9001435C3 /* FPDisplayBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDisplayBillViewController.swift; sourceTree = "<group>"; };
@@ -110,23 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				B17780C21A2152AA00C9822B /* AppDelegate.swift */,
-				B17780C91A2152AA00C9822B /* Main.storyboard */,
 				B70D16581A3242D4007E723D /* FPTabBarViewController.swift */,
-				63BF8D9B1A2E4035002C5EA6 /* FPDivideTableViewController.swift */,
-				B1CC846E1A2CF902001435C3 /* FPDebtAddPersonViewController.swift */,
-				B1CC845E1A2C71B2001435C3 /* FPDebtTableViewController.swift */,
-				B1CC845A1A2C70DB001435C3 /* FPDebtCollectionViewController.swift */,
-				B1CC84701A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift */,
-				B1CC84711A2D4728001435C3 /* FPDebtPersonCollectionViewCell.xib */,
-				B1CC84601A2C7204001435C3 /* FPMainDebtViewController.swift */,
-				B1B34A731A3145AE001516B3 /* FPDebtObject.swift */,
-				B1CC84561A2BFFB9001435C3 /* FPDisplayBillViewController.swift */,
-				B1CC84541A2592F1001435C3 /* FPPersonOrdersTableViewController.swift */,
-				B17780E51A21582F00C9822B /* FPMainViewController.swift */,
-				B17780E71A21586F00C9822B /* FPMainTableViewController.swift */,
-				B17780E91A2158F900C9822B /* FPPerson.swift */,
-				B177812C1A240D4C00C9822B /* FPOrderObject.swift */,
-				B1CC846C1A2C83A8001435C3 /* FPPersonDebt.swift */,
+				B17780C91A2152AA00C9822B /* Main.storyboard */,
+				B1811A8A1A329E13003C8ADD /* Debt Tab */,
+				B1811A891A329DFD003C8ADD /* Dutch Tab */,
+				B1811A881A329DDD003C8ADD /* Divide Tab */,
 				B17780CC1A2152AA00C9822B /* Images.xcassets */,
 				B17780CE1A2152AA00C9822B /* LaunchScreen.xib */,
 				B17780C41A2152AA00C9822B /* CIS55FinalProject.xcdatamodeld */,
@@ -158,6 +158,48 @@
 				B17780DA1A2152AB00C9822B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1811A881A329DDD003C8ADD /* Divide Tab */ = {
+			isa = PBXGroup;
+			children = (
+				63BF8D9B1A2E4035002C5EA6 /* FPDivideTableViewController.swift */,
+			);
+			name = "Divide Tab";
+			sourceTree = "<group>";
+		};
+		B1811A891A329DFD003C8ADD /* Dutch Tab */ = {
+			isa = PBXGroup;
+			children = (
+				B1CC84561A2BFFB9001435C3 /* FPDisplayBillViewController.swift */,
+				B1CC84541A2592F1001435C3 /* FPPersonOrdersTableViewController.swift */,
+				B17780E51A21582F00C9822B /* FPMainViewController.swift */,
+				B17780E71A21586F00C9822B /* FPMainTableViewController.swift */,
+				B17780E91A2158F900C9822B /* FPPerson.swift */,
+				B177812C1A240D4C00C9822B /* FPOrderObject.swift */,
+				B1811A8F1A33E7C2003C8ADD /* FPDutchPersonTableViewCell.swift */,
+				B1811A901A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib */,
+				B1811A931A33E973003C8ADD /* FPDutchOrderTableViewCell.swift */,
+				B1811A941A33E973003C8ADD /* FPDutchOrderTableViewCell.xib */,
+			);
+			name = "Dutch Tab";
+			sourceTree = "<group>";
+		};
+		B1811A8A1A329E13003C8ADD /* Debt Tab */ = {
+			isa = PBXGroup;
+			children = (
+				B1CC84601A2C7204001435C3 /* FPMainDebtViewController.swift */,
+				B1CC846C1A2C83A8001435C3 /* FPPersonDebt.swift */,
+				B1B34A731A3145AE001516B3 /* FPDebtObject.swift */,
+				B1CC846E1A2CF902001435C3 /* FPDebtAddPersonViewController.swift */,
+				B1CC845E1A2C71B2001435C3 /* FPDebtTableViewController.swift */,
+				B1CC845A1A2C70DB001435C3 /* FPDebtCollectionViewController.swift */,
+				B1CC84701A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift */,
+				B1CC84711A2D4728001435C3 /* FPDebtPersonCollectionViewCell.xib */,
+				B1811A8B1A329EE6003C8ADD /* FPDebtTableViewCell.swift */,
+				B1811A8C1A329EE6003C8ADD /* FPDebtTableViewCell.xib */,
+			);
+			name = "Debt Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,10 +282,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1811A8E1A329EE6003C8ADD /* FPDebtTableViewCell.xib in Resources */,
 				B17780CB1A2152AA00C9822B /* Main.storyboard in Resources */,
 				B17780D01A2152AA00C9822B /* LaunchScreen.xib in Resources */,
 				B1CC84731A2D4728001435C3 /* FPDebtPersonCollectionViewCell.xib in Resources */,
+				B1811A961A33E973003C8ADD /* FPDutchOrderTableViewCell.xib in Resources */,
 				B17780CD1A2152AA00C9822B /* Images.xcassets in Resources */,
+				B1811A921A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B17780E81A21586F00C9822B /* FPMainTableViewController.swift in Sources */,
+				B1811A911A33E7C2003C8ADD /* FPDutchPersonTableViewCell.swift in Sources */,
 				B17780C61A2152AA00C9822B /* CIS55FinalProject.xcdatamodeld in Sources */,
 				B1CC84551A2592F1001435C3 /* FPPersonOrdersTableViewController.swift in Sources */,
 				B1CC845F1A2C71B2001435C3 /* FPDebtTableViewController.swift in Sources */,
@@ -271,8 +317,10 @@
 				B17780E61A21582F00C9822B /* FPMainViewController.swift in Sources */,
 				B70D16591A3242D4007E723D /* FPTabBarViewController.swift in Sources */,
 				B177812D1A240D4C00C9822B /* FPOrderObject.swift in Sources */,
+				B1811A951A33E973003C8ADD /* FPDutchOrderTableViewCell.swift in Sources */,
+				B1811A8D1A329EE6003C8ADD /* FPDebtTableViewCell.swift in Sources */,
 				B1B34A741A3145AE001516B3 /* FPDebtObject.swift in Sources */,
-				63BF8D9C1A2E4035002C5EA6 /* DivideTableViewController.swift in Sources */,
+				63BF8D9C1A2E4035002C5EA6 /* FPDivideTableViewController.swift in Sources */,
 				B1CC846D1A2C83A8001435C3 /* FPPersonDebt.swift in Sources */,
 				B1CC84721A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift in Sources */,
 				B1CC84571A2BFFB9001435C3 /* FPDisplayBillViewController.swift in Sources */,

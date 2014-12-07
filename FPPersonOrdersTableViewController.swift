@@ -24,6 +24,11 @@ class FPPersonOrdersTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        
+        var nib = UINib(nibName: "FPDutchOrderTableViewCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "dutchOrder")
+        self.tableView.rowHeight = 50
+        
 
     }
 
@@ -108,35 +113,40 @@ class FPPersonOrdersTableViewController: UITableViewController {
 
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("orderCell", forIndexPath: indexPath) as UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> FPDutchOrderTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("dutchOrder", forIndexPath: indexPath) as FPDutchOrderTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = self.person?.orderList[indexPath.row].orderName
+        let order = self.person?.orderList[indexPath.row]
+        
+        cell.cellName.text = order?.orderName.uppercaseString
+        cell.cellPrice.text = NSString(format: "%.2f", (order?.orderPrice)!)
 
         return cell
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.person?.orderList.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

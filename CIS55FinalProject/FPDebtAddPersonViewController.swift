@@ -15,6 +15,9 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
 
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var naviBar: UINavigationBar!
+    @IBOutlet weak var naviItem: UINavigationItem!
+    //@IBOutlet weak var naviBar: UINavigationBar!
     var cameraUI:UIImagePickerController = UIImagePickerController()
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
@@ -33,6 +36,18 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //var nav = self.navigationController?.navigationBar
+        
+        naviBar.barStyle = UIBarStyle.Black
+        //nav?.tintColor = UIColor.yellowColor()
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        imageView.contentMode = .ScaleAspectFit
+        
+        let image = UIImage(named: "logo.png")
+        imageView.image = image
+    
+        naviItem.titleView = imageView
     }
 
     override func didReceiveMemoryWarning() {
