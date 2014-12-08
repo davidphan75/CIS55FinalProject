@@ -24,6 +24,7 @@
 		B1811A921A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1811A901A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib */; };
 		B1811A951A33E973003C8ADD /* FPDutchOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1811A931A33E973003C8ADD /* FPDutchOrderTableViewCell.swift */; };
 		B1811A961A33E973003C8ADD /* FPDutchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1811A941A33E973003C8ADD /* FPDutchOrderTableViewCell.xib */; };
+		B1811A981A34E7E4003C8ADD /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1811A971A34E7E4003C8ADD /* CustomColors.swift */; };
 		B1B34A741A3145AE001516B3 /* FPDebtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B34A731A3145AE001516B3 /* FPDebtObject.swift */; };
 		B1CC84551A2592F1001435C3 /* FPPersonOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC84541A2592F1001435C3 /* FPPersonOrdersTableViewController.swift */; };
 		B1CC84571A2BFFB9001435C3 /* FPDisplayBillViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CC84561A2BFFB9001435C3 /* FPDisplayBillViewController.swift */; };
@@ -69,6 +70,7 @@
 		B1811A901A33E7C2003C8ADD /* FPDutchPersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPDutchPersonTableViewCell.xib; sourceTree = "<group>"; };
 		B1811A931A33E973003C8ADD /* FPDutchOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDutchOrderTableViewCell.swift; sourceTree = "<group>"; };
 		B1811A941A33E973003C8ADD /* FPDutchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FPDutchOrderTableViewCell.xib; sourceTree = "<group>"; };
+		B1811A971A34E7E4003C8ADD /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		B1B34A731A3145AE001516B3 /* FPDebtObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDebtObject.swift; sourceTree = "<group>"; };
 		B1CC84541A2592F1001435C3 /* FPPersonOrdersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPPersonOrdersTableViewController.swift; path = ../FPPersonOrdersTableViewController.swift; sourceTree = "<group>"; };
 		B1CC84561A2BFFB9001435C3 /* FPDisplayBillViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FPDisplayBillViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B17780CE1A2152AA00C9822B /* LaunchScreen.xib */,
 				B17780C41A2152AA00C9822B /* CIS55FinalProject.xcdatamodeld */,
 				B17780C01A2152AA00C9822B /* Supporting Files */,
+				B1811A971A34E7E4003C8ADD /* CustomColors.swift */,
 			);
 			path = CIS55FinalProject;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				B1B34A741A3145AE001516B3 /* FPDebtObject.swift in Sources */,
 				63BF8D9C1A2E4035002C5EA6 /* FPDivideTableViewController.swift in Sources */,
 				B1CC846D1A2C83A8001435C3 /* FPPersonDebt.swift in Sources */,
+				B1811A981A34E7E4003C8ADD /* CustomColors.swift in Sources */,
 				B1CC84721A2D4728001435C3 /* FPDebtPersonCollectionViewCell.swift in Sources */,
 				B1CC84571A2BFFB9001435C3 /* FPDisplayBillViewController.swift in Sources */,
 				B17780C31A2152AA00C9822B /* AppDelegate.swift in Sources */,

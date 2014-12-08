@@ -18,9 +18,12 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
     @IBOutlet weak var debtTableView: UITableView!
     var debtPicker = UIPickerView()
     var indexPath:NSIndexPath?
+    var editIndexPath:NSIndexPath?
     var debtArray = [String]()
     let debtOptions:[String] = ["Owe","Owe's Me"]
     var inputDebtType:UITextField?
+    var unwindImageData:NSData?
+    var unwindString:String?
     
 
     override func viewDidLoad() {
@@ -55,7 +58,11 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressHandler:")
         debtCollectionView.addGestureRecognizer(longPressGestureRecognizer)
         longPressGestureRecognizer.delegate = self
-
+        
+        let panUpGuester = UIPanGestureRecognizer(target: self, action: "panUpHandler:")
+        debtCollectionView.addGestureRecognizer(panUpGuester)
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -200,6 +207,7 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         let PersonDebt = (fetchedResultsController.objectAtIndexPath(indexPath) as FPPersonDebt)
         self.debtArray = (NSKeyedUnarchiver.unarchiveObjectWithData(PersonDebt.arrayData) as Array)
         
+
         //self.lowerNavBar.topItem?.title = "\(PersonDebt.name)'s Debts'"
         var barTitle = ""
         for char in PersonDebt.name{
@@ -212,6 +220,8 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         if((self.indexPath) != nil){
             (collectionView.cellForItemAtIndexPath(self.indexPath!) as FPDebtPersonCollectionViewCell).cellPicture.layer.opacity = 0.65
         }
+        println("after thing")
+        println(indexPath)
         (collectionView.cellForItemAtIndexPath(indexPath) as FPDebtPersonCollectionViewCell).cellPicture.layer.opacity = 1
         self.indexPath = indexPath
     }
@@ -230,11 +240,35 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
             var tapLocation:CGPoint = sender.locationInView(debtCollectionView)
             let indexPath = debtCollectionView.indexPathForItemAtPoint(tapLocation)
             println(indexPath?.row)
+            if(indexPath != nil){
+                self.editIndexPath = indexPath
+                let context = fetchedResultsController.managedObjectContext
+                //context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath!) as NSManagedObject)
+                performSegueWithIdentifier("ChangeDebtPerson", sender: self)
+            }
             
-            let context = fetchedResultsController.managedObjectContext
-            context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath!) as NSManagedObject)
         }
     }
+    
+    func panUpHandler(sender:UIPanGestureRecognizer){
+        if(sender.state == UIGestureRecognizerState.Began){
+            var tapLocation:CGPoint = sender.locationInView(debtCollectionView)
+            let indexPath = debtCollectionView.indexPathForItemAtPoint(tapLocation)
+            println(indexPath?.row)
+            println(indexPath)
+            
+            if(indexPath != nil){
+                let context = fetchedResultsController.managedObjectContext
+                context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath!) as NSManagedObject)
+                self.debtArray = [String]()
+                self.lowerNavBar.topItem?.title = ""
+                self.indexPath = nil
+                //self.debtTableView.reloadData()
+                
+            }
+        }
+    }
+    
     
     // MARK: -------------------- Table view data source
     
@@ -367,10 +401,19 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "ChangeDebtPerson"){
+            let vc = segue.destinationViewController as FPDebtAddPersonViewController
+            vc.editingPerson = true
+            vc.coreObject = (fetchedResultsController.objectAtIndexPath(editIndexPath!) as NSManagedObject)
+        }
     }
 
 
     @IBAction func unwindSegue(segue:UIStoryboardSegue){
         println("unwind")
+        let person = (fetchedResultsController.objectAtIndexPath(self.editIndexPath!) as FPPersonDebt)
+        person.picture = unwindImageData!
+        person.name = unwindString!
+        viewDidLoad()
     }
 }

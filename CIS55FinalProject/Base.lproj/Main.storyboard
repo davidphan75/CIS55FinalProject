@@ -336,7 +336,7 @@
                                     <navigationItem title="Title" id="DIA-rF-Xl6">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kAR-27-dar">
                                             <connections>
-                                                <segue destination="euw-3z-g4X" kind="unwind" unwindAction="unwindSegue:" id="mEp-KS-TUC"/>
+                                                <segue destination="euw-3z-g4X" kind="unwind" identifier="savePerson" unwindAction="unwindSegue:" id="tlz-jL-Ghe"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="F6J-3t-9Zy">
@@ -399,11 +399,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Oj7-FI-MjK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="s4q-mg-tpV">
-                            <connections>
-                                <segue destination="euw-3z-g4X" kind="unwind" unwindAction="unwindSegue:" id="APq-4I-bRz"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="s4q-mg-tpV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="psx-SZ-m69">
                             <connections>
                                 <action selector="savePerson:" destination="nNa-zq-YB0" id="Xmr-vR-SF0"/>
@@ -415,6 +411,7 @@
                         <outlet property="naviBar" destination="xIo-tc-yy8" id="T7H-dE-mYE"/>
                         <outlet property="naviItem" destination="DIA-rF-Xl6" id="oi8-SD-gs6"/>
                         <outlet property="picture" destination="xIt-0r-hdZ" id="Ff8-El-VdS"/>
+                        <segue destination="euw-3z-g4X" kind="unwind" unwindAction="unwindSegue:" id="b86-yQ-8Kw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBg-od-sNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -537,6 +534,7 @@
                         <outlet property="debtCollectionView" destination="Qcb-nZ-m3g" id="Q2f-EJ-nUQ"/>
                         <outlet property="debtTableView" destination="sB4-pG-IsI" id="9CA-Yl-aZp"/>
                         <outlet property="lowerNavBar" destination="fRL-qA-FoV" id="j0p-gI-ypi"/>
+                        <segue destination="nNa-zq-YB0" kind="presentation" identifier="ChangeDebtPerson" id="Rcu-Wy-EKE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMT-dS-qcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -551,16 +549,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="SCh-2Z-Ebs">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textAttributes key="titleTextAttributes">
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
-                            </textAttributes>
-                            <items>
-                                <navigationItem title="Title" prompt="" id="pPn-vc-JcB"/>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="orderCell" id="LQ0-gp-yKG">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -574,10 +562,6 @@
                             <outlet property="delegate" destination="IVH-DJ-ZKq" id="Yek-5l-UgB"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="naviBar" destination="SCh-2Z-Ebs" id="g9c-CI-qVV"/>
-                        <outlet property="naviItem" destination="pPn-vc-JcB" id="5tS-BC-UC4"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Nu-Ym-tIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -785,5 +769,8 @@
         <image name="debt60" width="30" height="30"/>
         <image name="divide60" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rcu-Wy-EKE"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.12067468464374542" green="0.87134724855422974" blue="0.01850462332367897" alpha="1" colorSpace="calibratedRGB"/>
 </document>

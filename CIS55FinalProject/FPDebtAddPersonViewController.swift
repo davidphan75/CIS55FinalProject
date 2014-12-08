@@ -11,7 +11,7 @@ import MobileCoreServices
 import Foundation
 import CoreData
 
-class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, NSFetchedResultsControllerDelegate{
 
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var nameInput: UITextField!
@@ -19,6 +19,8 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
     @IBOutlet weak var naviItem: UINavigationItem!
     //@IBOutlet weak var naviBar: UINavigationBar!
     var cameraUI:UIImagePickerController = UIImagePickerController()
+    var editingPerson:Bool = false
+    var coreObject:NSManagedObject?
     
     lazy var managedObjectContext : NSManagedObjectContext? = {
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -28,13 +30,28 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
             return nil
         }
         }()
+    
+    var fetchedResultsController: NSFetchedResultsController = NSFetchedResultsController()
+    
+    func getFetchedResultsController() -> NSFetchedResultsController {
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: FPCoreObjectFetchRequest(), managedObjectContext: managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultsController
+    }
+    
+    func FPCoreObjectFetchRequest() -> NSFetchRequest {
+        let fetchRequest = NSFetchRequest(entityName: "FPPersonDebt")
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+
 
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        println("reaches add screen")
         // Do any additional setup after loading the view.
         //var nav = self.navigationController?.navigationBar
         
@@ -48,6 +65,13 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
         imageView.image = image
     
         naviItem.titleView = imageView
+        
+        if(editingPerson){
+            let person = (coreObject as FPPersonDebt)
+            let picture = UIImage(data: person.picture)
+            self.picture.image = picture
+            self.nameInput.text = person.name
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,9 +89,13 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
     
     @IBAction func savePerson(sender: AnyObject) {
         let imageData = UIImagePNGRepresentation(self.picture.image)
-        var array = [String]()
-        let arrayData = NSKeyedArchiver.archivedDataWithRootObject(array)
-        FPPersonDebt.createInManagedObjectContext(self.managedObjectContext!, arrayData: arrayData, name: self.nameInput.text, picture: imageData)
+        if(editingPerson){
+            self.performSegueWithIdentifier("savePerson", sender: self)
+        }else{
+            var array = [String]()
+            let arrayData = NSKeyedArchiver.archivedDataWithRootObject(array)
+            FPPersonDebt.createInManagedObjectContext(self.managedObjectContext!, arrayData: arrayData, name: self.nameInput.text, picture: imageData)
+        }
         dismissViewControllerAnimated(true, completion: nil)
 
     }
@@ -129,6 +157,14 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "savePerson"){
+            let vc = segue.destinationViewController as FPMainDebtViewController
+            println(vc.editIndexPath!)
+            //(vc.fetchedResultsController.objectAtIndexPath(vc.editIndexPath!) as FPPersonDebt).name = self.nameInput.text
+            vc.unwindImageData = UIImagePNGRepresentation(self.picture.image)
+            vc.unwindString = self.nameInput.text
+            
+        }
     }
     
 

@@ -46,9 +46,20 @@ class FPPersonOrdersTableViewController: UITableViewController, UINavigationBarD
         
         navigationItem.titleView = imageView
         
-        naviItem.title = titleString
-
         
+        let frameSize = self.view.frame
+        
+        let bar = UIView(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 30))
+        bar.backgroundColor = CustomColors.FPBackgroundGray()
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 30))
+        label.text = spaceOutWord(titleString.uppercaseString)
+        label.textAlignment = NSTextAlignment.Center
+        label.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
+        label.textColor = CustomColors.FPTextGray()
+        bar.addSubview(label)
+
+        self.view.addSubview(bar)
 
     }
 
@@ -167,6 +178,15 @@ class FPPersonOrdersTableViewController: UITableViewController, UINavigationBarD
         }    
     }
     
+    
+    func spaceOutWord(word:String)->String{
+        var spacedWord:String = ""
+        for thisChar in word{
+            spacedWord += " \(thisChar)"
+        }
+        return spacedWord
+    }
+
 
     /*
     // Override to support rearranging the table view.
