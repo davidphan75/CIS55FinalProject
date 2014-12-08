@@ -40,7 +40,7 @@ class FPMainViewController: UIViewController, UITableViewDelegate, UIGestureReco
         
         let panUpGuester = UIPanGestureRecognizer(target: self, action: "panUpHandler:")
         self.view.addGestureRecognizer(panUpGuester)
-
+        
 
     }
 

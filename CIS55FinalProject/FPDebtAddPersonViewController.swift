@@ -17,6 +17,9 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var naviBar: UINavigationBar!
     @IBOutlet weak var naviItem: UINavigationItem!
+    
+    let defualtImage = UIImage(named: "default.jpg")
+    
     //@IBOutlet weak var naviBar: UINavigationBar!
     var cameraUI:UIImagePickerController = UIImagePickerController()
     var editingPerson:Bool = false
@@ -55,8 +58,15 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
         // Do any additional setup after loading the view.
         //var nav = self.navigationController?.navigationBar
         
+        if(self.picture.image == nil){
+            self.picture.image = defualtImage
+        }
+        self.picture.layer.cornerRadius = self.picture.frame.size.width / 3.6
+        self.picture.clipsToBounds = true
+        self.picture.layer.borderWidth = 3.0
+        self.picture.layer.borderColor = CustomColors.FPBackgroundGray().CGColor
+        
         naviBar.barStyle = UIBarStyle.Black
-        //nav?.tintColor = UIColor.yellowColor()
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
         imageView.contentMode = .ScaleAspectFit
@@ -149,6 +159,10 @@ class FPDebtAddPersonViewController: UIViewController,UIImagePickerControllerDel
     }
 
 
+
+    @IBAction func cancelButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     
     // MARK: - Navigation
