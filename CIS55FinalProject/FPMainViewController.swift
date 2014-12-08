@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FPMainViewController: UIViewController, UITableViewDelegate {
+class FPMainViewController: UIViewController, UITableViewDelegate, UIGestureRecognizerDelegate{
 
     var path:NSIndexPath?
     var peoples = [FPPerson]()
@@ -37,6 +37,9 @@ class FPMainViewController: UIViewController, UITableViewDelegate {
         imageView.image = image
         
         navigationItem.titleView = imageView
+        
+        let panUpGuester = UIPanGestureRecognizer(target: self, action: "panUpHandler:")
+        self.view.addGestureRecognizer(panUpGuester)
 
 
     }
@@ -167,7 +170,15 @@ class FPMainViewController: UIViewController, UITableViewDelegate {
         }    
     }
 
+    //Mark -------------------Gesture Controls
     
+    func panUpHandler(sender:UILongPressGestureRecognizer){
+        if(sender.state == UIGestureRecognizerState.Began){
+            self.tipInput.resignFirstResponder()
+            self.taxInput.resignFirstResponder()
+        }
+    }
+
 
 
     

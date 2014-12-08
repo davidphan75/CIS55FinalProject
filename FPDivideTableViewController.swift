@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DivideTableViewController: UITableViewController {
+class DivideTableViewController: UITableViewController, UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var BillTotalText: UITextField!
@@ -22,7 +22,9 @@ class DivideTableViewController: UITableViewController {
         var billTotal = BillTotalText.text
         var tip = TipText.text
         var numPeople = NumberPeopleText.text
-        
+        if (numPeople == "" && billTotal == "" && tip == ""){
+            numPeople = "1"
+        }
         
         var billPer = ((billTotal as NSString).doubleValue * (1 + ((tip as NSString).doubleValue/100))) / ((numPeople as NSString).doubleValue)
         
@@ -38,20 +40,6 @@ class DivideTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
-    {
-        textField.resignFirstResponder()
-        return true;
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         
         var nav = self.navigationController?.navigationBar
         
@@ -65,71 +53,45 @@ class DivideTableViewController: UITableViewController {
         imageView.image = image
         
         navigationItem.titleView = imageView
+
+        
+        let panUpGuester = UIPanGestureRecognizer(target: self, action: "panUpHandler:")
+        self.view.addGestureRecognizer(panUpGuester)
+
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
     }
 
 
-    // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
-
+    
     @IBAction func CalculationButton(sender: AnyObject) {
         calculation()
     }
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    
+    
+    //Mark -------------------Gesture Controls
+    
+    func panUpHandler(sender:UILongPressGestureRecognizer){
+        if(sender.state == UIGestureRecognizerState.Began){
+            self.BillTotalText.resignFirstResponder()
+            self.NumberPeopleText.resignFirstResponder()
+            self.TipText.resignFirstResponder()
+        }
     }
-    */
+    
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+  
     /*
     // MARK: - Navigation
 

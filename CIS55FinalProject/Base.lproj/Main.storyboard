@@ -619,7 +619,7 @@
                                     </constraints>
                                     <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" enablesReturnKeyAutomatically="YES"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="Uo0-BD-gE6"/>
