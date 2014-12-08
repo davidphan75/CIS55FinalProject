@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jhg-Fy-zKM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jhg-Fy-zKM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -86,6 +86,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jdW-l9-VvB"/>
                                 </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
@@ -94,6 +95,7 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PERCENT OF TIP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-Mk-T7w">
                                 <rect key="frame" x="0.0" y="190" width="600" height="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
@@ -293,13 +295,11 @@
             </objects>
             <point key="canvasLocation" x="1763" y="1732.5"/>
         </scene>
-        <!--    -->
+        <!--Navigation Controller-->
         <scene sceneID="Lxj-G0-D8c">
             <objects>
                 <navigationController id="Elj-Ob-8Ez" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" title="    " image="debt60" id="WsG-Za-PU0">
-                        <inset key="imageInsets" minX="7" minY="11" maxX="7" maxY="4"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" tag="2" title="" image="debt60" id="WsG-Za-PU0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6r-WA-wXQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -580,9 +580,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg9-Bz-nac">
-                                    <rect key="frame" x="16" y="264" width="568" height="29"/>
+                                    <rect key="frame" x="16" y="271" width="568" height="29"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="29" id="of6-Z7-3wn"/>
+                                        <constraint firstAttribute="height" constant="29" id="j8i-z0-Jxz"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="16"/>
                                     <color key="textColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
@@ -591,9 +591,9 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BILL TOTAL" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XcV-FL-f8X">
                                     <rect key="frame" x="0.0" y="77" width="600" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="OVw-Tp-gem"/>
+                                        <constraint firstAttribute="height" constant="50" id="uX5-dP-3pK"/>
                                     </constraints>
-                                    <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
@@ -603,9 +603,9 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PERCENT OF TIP" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="fgm-AV-DyE">
                                     <rect key="frame" x="0.0" y="126" width="600" height="50"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="1Eg-df-wFL"/>
+                                        <constraint firstAttribute="height" constant="50" id="6Vg-qg-PPS"/>
                                     </constraints>
-                                    <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                     <connections>
@@ -617,7 +617,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Uo0-BD-gE6"/>
                                     </constraints>
-                                    <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                     <variation key="default">
@@ -629,11 +629,21 @@
                                         <outlet property="delegate" destination="Qc0-UP-smj" id="c5C-Jr-cfC"/>
                                     </connections>
                                 </textField>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIMPLE BILL CALCULATOR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B3j-CA-Wxn">
+                                    <rect key="frame" x="152" y="0.0" width="296" height="77"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="77" id="G5f-4P-QNX"/>
+                                        <constraint firstAttribute="width" constant="296" id="apZ-GN-rqK"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="25"/>
+                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iiu-hp-8G0">
-                                    <rect key="frame" x="200" y="233" width="200" height="30"/>
+                                    <rect key="frame" x="200" y="236" width="200" height="30"/>
                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.63" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="200" id="85D-l5-bqx"/>
+                                        <constraint firstAttribute="width" constant="200" id="Gvo-HA-LbH"/>
                                     </constraints>
                                     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal">
@@ -650,36 +660,26 @@
                                         <action selector="CalculationButton:" destination="Qc0-UP-smj" eventType="touchUpInside" id="b2J-s9-1sl"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIMPLE BILL CALCULATOR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B3j-CA-Wxn">
-                                    <rect key="frame" x="152" y="0.0" width="296" height="77"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="77" id="Sxv-bv-JhV"/>
-                                        <constraint firstAttribute="width" constant="296" id="Umm-1o-KSZ"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="25"/>
-                                    <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="XcV-FL-f8X" firstAttribute="leading" secondItem="fgm-AV-DyE" secondAttribute="leading" id="2qC-K9-V9M"/>
-                                <constraint firstItem="XcV-FL-f8X" firstAttribute="trailing" secondItem="fgm-AV-DyE" secondAttribute="trailing" id="3OK-1b-6EN"/>
-                                <constraint firstItem="9zJ-kv-yHU" firstAttribute="leading" secondItem="exd-g4-LaA" secondAttribute="leading" id="3bO-1M-7J8"/>
-                                <constraint firstItem="iiu-hp-8G0" firstAttribute="top" secondItem="9zJ-kv-yHU" secondAttribute="bottom" constant="8" symbolic="YES" id="5JM-hO-8Aj"/>
-                                <constraint firstItem="B3j-CA-Wxn" firstAttribute="centerX" secondItem="XcV-FL-f8X" secondAttribute="centerX" id="BDO-7f-42c"/>
-                                <constraint firstItem="iiu-hp-8G0" firstAttribute="centerX" secondItem="9zJ-kv-yHU" secondAttribute="centerX" id="Bde-Qh-rPH"/>
-                                <constraint firstItem="zg9-Bz-nac" firstAttribute="top" secondItem="iiu-hp-8G0" secondAttribute="bottom" constant="1" id="NzZ-6C-5Mb"/>
-                                <constraint firstItem="9zJ-kv-yHU" firstAttribute="trailing" secondItem="fgm-AV-DyE" secondAttribute="trailing" id="P6T-em-Tjv"/>
-                                <constraint firstItem="zg9-Bz-nac" firstAttribute="leading" secondItem="exd-g4-LaA" secondAttribute="leading" constant="16" id="P8g-Kf-Kve"/>
-                                <constraint firstItem="iiu-hp-8G0" firstAttribute="top" secondItem="fgm-AV-DyE" secondAttribute="bottom" constant="57" id="RSd-O9-8Zg"/>
-                                <constraint firstItem="9zJ-kv-yHU" firstAttribute="top" secondItem="XcV-FL-f8X" secondAttribute="bottom" constant="48" id="aON-sM-ZfR"/>
-                                <constraint firstItem="fgm-AV-DyE" firstAttribute="top" secondItem="B3j-CA-Wxn" secondAttribute="bottom" constant="49" id="hlN-8i-Ldh"/>
-                                <constraint firstItem="XcV-FL-f8X" firstAttribute="top" secondItem="B3j-CA-Wxn" secondAttribute="bottom" id="ldx-nS-Mn1"/>
-                                <constraint firstItem="zg9-Bz-nac" firstAttribute="centerX" secondItem="iiu-hp-8G0" secondAttribute="centerX" id="nHj-Hd-Kob"/>
-                                <constraint firstItem="9zJ-kv-yHU" firstAttribute="leading" secondItem="fgm-AV-DyE" secondAttribute="leading" id="nkc-Nr-ev9"/>
-                                <constraint firstItem="B3j-CA-Wxn" firstAttribute="top" secondItem="exd-g4-LaA" secondAttribute="top" id="oJd-1G-HBx"/>
-                                <constraint firstAttribute="trailing" secondItem="fgm-AV-DyE" secondAttribute="trailing" id="wIX-yU-7dI"/>
+                                <constraint firstItem="9zJ-kv-yHU" firstAttribute="top" secondItem="XcV-FL-f8X" secondAttribute="bottom" constant="48" id="1sr-yt-lrL"/>
+                                <constraint firstItem="zg9-Bz-nac" firstAttribute="top" secondItem="iiu-hp-8G0" secondAttribute="bottom" constant="5" id="4oP-kW-TuC"/>
+                                <constraint firstItem="iiu-hp-8G0" firstAttribute="centerX" secondItem="zg9-Bz-nac" secondAttribute="centerX" id="4pf-Fq-9dl"/>
+                                <constraint firstItem="fgm-AV-DyE" firstAttribute="top" secondItem="B3j-CA-Wxn" secondAttribute="bottom" constant="49" id="Ein-7z-O9O"/>
+                                <constraint firstItem="iiu-hp-8G0" firstAttribute="top" secondItem="9zJ-kv-yHU" secondAttribute="bottom" constant="11" id="LBi-wv-tXE"/>
+                                <constraint firstAttribute="trailing" secondItem="9zJ-kv-yHU" secondAttribute="trailing" id="O9F-QQ-qNk"/>
+                                <constraint firstItem="iiu-hp-8G0" firstAttribute="centerX" secondItem="9zJ-kv-yHU" secondAttribute="centerX" id="QrW-oT-o0D"/>
+                                <constraint firstItem="fgm-AV-DyE" firstAttribute="trailing" secondItem="9zJ-kv-yHU" secondAttribute="trailing" id="Tzb-p0-3Yc"/>
+                                <constraint firstItem="XcV-FL-f8X" firstAttribute="centerX" secondItem="B3j-CA-Wxn" secondAttribute="centerX" id="Utc-Qb-KM5"/>
+                                <constraint firstItem="B3j-CA-Wxn" firstAttribute="top" secondItem="exd-g4-LaA" secondAttribute="top" id="XUU-qZ-PtK"/>
+                                <constraint firstItem="fgm-AV-DyE" firstAttribute="leading" secondItem="XcV-FL-f8X" secondAttribute="leading" id="Ylm-Yo-ab5"/>
+                                <constraint firstItem="XcV-FL-f8X" firstAttribute="leading" secondItem="exd-g4-LaA" secondAttribute="leading" id="cCW-fG-h0G"/>
+                                <constraint firstItem="zg9-Bz-nac" firstAttribute="leading" secondItem="exd-g4-LaA" secondAttribute="leading" constant="16" id="ece-w7-6Pf"/>
+                                <constraint firstItem="iiu-hp-8G0" firstAttribute="top" secondItem="fgm-AV-DyE" secondAttribute="bottom" constant="60" id="j3V-MP-Cx5"/>
+                                <constraint firstItem="XcV-FL-f8X" firstAttribute="top" secondItem="B3j-CA-Wxn" secondAttribute="bottom" id="oDQ-j1-jp6"/>
+                                <constraint firstItem="fgm-AV-DyE" firstAttribute="trailing" secondItem="XcV-FL-f8X" secondAttribute="trailing" id="q0J-JK-eBJ"/>
+                                <constraint firstItem="9zJ-kv-yHU" firstAttribute="leading" secondItem="fgm-AV-DyE" secondAttribute="leading" id="s5F-TH-bjU"/>
                             </constraints>
                         </view>
                         <connections>
@@ -703,9 +703,7 @@
         <scene sceneID="kpz-7c-CI4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ayV-RP-5aG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="" image="beer-50" id="MoN-uZ-yOY">
-                        <inset key="imageInsets" minX="7" minY="13" maxX="7" maxY="3"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" tag="1" title="" image="dutch60" id="MoN-uZ-yOY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eQW-Ln-E2F">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -742,13 +740,11 @@
             </objects>
             <point key="canvasLocation" x="157" y="262"/>
         </scene>
-        <!--     -->
+        <!--Navigation Controller-->
         <scene sceneID="GXJ-61-mIU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lvW-2X-T52" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="     " image="divide60" id="dtL-CU-FHC">
-                        <inset key="imageInsets" minX="5" minY="9" maxX="5" maxY="1"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="divide60" id="dtL-CU-FHC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sDf-Pw-Zun">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -765,12 +761,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="beer-50" width="25" height="25"/>
-        <image name="debt60" width="30" height="30"/>
+        <image name="debt60" width="20" height="20"/>
         <image name="divide60" width="30" height="30"/>
+        <image name="dutch60" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rcu-Wy-EKE"/>
+        <segue reference="oli-xg-tZw"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.12067468464374542" green="0.87134724855422974" blue="0.01850462332367897" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.40000000596046448" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

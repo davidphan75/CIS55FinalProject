@@ -38,6 +38,7 @@ class FPDisplayBillViewController: UIViewController, UINavigationBarDelegate {
         
         naviItem.titleView = imageView
         
+        
         //navigationItem.titleView = imageView
 
         
