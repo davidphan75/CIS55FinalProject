@@ -14,6 +14,10 @@ class DivideTableViewController: UITableViewController, UIGestureRecognizerDeleg
     @IBOutlet weak var BillTotalText: UITextField!
     @IBOutlet weak var TipText: UITextField!
     @IBOutlet weak var NumberPeopleText: UITextField!
+    
+    @IBOutlet weak var BillTotalLabel: UILabel!
+    @IBOutlet weak var TipLabel: UILabel!
+    @IBOutlet weak var PeopleLabel: UILabel!
     @IBOutlet weak var BillPerPersonLabel: UILabel!
     
     
@@ -28,7 +32,18 @@ class DivideTableViewController: UITableViewController, UIGestureRecognizerDeleg
         
         var billPer = ((billTotal as NSString).doubleValue * (1 + ((tip as NSString).doubleValue/100))) / ((numPeople as NSString).doubleValue)
         
+        
         BillPerPersonLabel.text = NSString(format: "The bill per person is $%.2f.", billPer);
+        
+        BillTotalLabel.text = NSString(format: "The bill total is $%.2f.", billTotal);
+        TipLabel.text = NSString(format: "The percent of tip is %.2f%", tip);
+        PeopleLabel.text = NSString(format: "The number of people is $%.2f.", numPeople);
+
+        
+        BillTotalText.text = ""
+        TipText.text = ""
+        NumberPeopleText.text = ""
+        
     }
     
     override func viewDidLoad() {

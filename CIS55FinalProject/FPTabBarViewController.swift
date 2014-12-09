@@ -38,7 +38,7 @@ class FPTabBarViewController: UITabBarController {
         for item in self.tabBar.items as [UITabBarItem] {
             if let image = item.image {
                 item.image = image.imageWithColor(UIColor.whiteColor()).imageWithRenderingMode(.AlwaysOriginal)
-                
+                 
             }
         }
 
