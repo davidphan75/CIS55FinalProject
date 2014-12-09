@@ -162,12 +162,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="nPT-L5-cxP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="EIV-ia-KUc">
+                        <barButtonItem key="leftBarButtonItem" image="billGreen50" id="EIV-ia-KUc">
                             <connections>
                                 <segue destination="aAI-qI-H2o" kind="presentation" identifier="showBill" id="Amd-LH-MTn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jWV-aE-n8S">
+                        <barButtonItem key="rightBarButtonItem" image="addPerson50" id="jWV-aE-n8S">
                             <connections>
                                 <action selector="addButton:" destination="BYZ-38-t0r" id="acb-HW-1xs"/>
                             </connections>
@@ -331,12 +331,12 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="DIA-rF-Xl6">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kAR-27-dar">
+                                        <barButtonItem key="leftBarButtonItem" image="cancel-50" id="kAR-27-dar">
                                             <connections>
                                                 <action selector="cancelButton:" destination="nNa-zq-YB0" id="9hc-Xi-Cht"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="F6J-3t-9Zy">
+                                        <barButtonItem key="rightBarButtonItem" image="checkmark-50" id="F6J-3t-9Zy">
                                             <connections>
                                                 <action selector="savePerson:" destination="nNa-zq-YB0" id="qM3-pd-Ztg"/>
                                             </connections>
@@ -531,12 +531,12 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="IaR-07-GWD">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="j1A-3f-0dl">
+                        <barButtonItem key="leftBarButtonItem" image="addDebtThin" id="j1A-3f-0dl">
                             <connections>
                                 <action selector="addDebt:" destination="tNg-gX-Sc5" id="pnF-JM-McJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gFd-v5-fhq">
+                        <barButtonItem key="rightBarButtonItem" image="addPerson50" id="gFd-v5-fhq">
                             <connections>
                                 <segue destination="nNa-zq-YB0" kind="presentation" identifier="addDebtPerson" id="oli-xg-tZw"/>
                             </connections>
@@ -773,6 +773,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addDebtThin" width="25" height="25"/>
+        <image name="addPerson50" width="25" height="25"/>
+        <image name="billGreen50" width="25" height="25"/>
+        <image name="cancel-50" width="25" height="25"/>
+        <image name="checkmark-50" width="25" height="25"/>
         <image name="debt60" width="20" height="20"/>
         <image name="divide60" width="30" height="30"/>
         <image name="dutch60" width="20" height="20"/>
