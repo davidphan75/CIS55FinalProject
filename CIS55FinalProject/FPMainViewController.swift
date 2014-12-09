@@ -41,6 +41,9 @@ class FPMainViewController: UIViewController, UITableViewDelegate, UIGestureReco
         let panUpGuester = UIPanGestureRecognizer(target: self, action: "panUpHandler:")
         self.view.addGestureRecognizer(panUpGuester)
         
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "longPressHandler:")
+        self.personTableView.addGestureRecognizer(longPressGesture)
+        
 
     }
 
@@ -178,6 +181,32 @@ class FPMainViewController: UIViewController, UITableViewDelegate, UIGestureReco
             self.taxInput.resignFirstResponder()
         }
     }
+    
+    func longPressHandler(sender:UILongPressGestureRecognizer){
+        if(sender.state == UIGestureRecognizerState.Began){
+            var tapLocation:CGPoint = sender.locationInView(self.personTableView)
+            let indexPath = self.personTableView.indexPathForRowAtPoint(tapLocation)
+            println(indexPath?.row)
+            println(indexPath)
+            
+            if(indexPath != nil){
+                self.deletePerson(indexPath!)
+            }
+        }
+    }
+    
+    func deletePerson(indexPath:NSIndexPath){
+        let actionSheet = UIAlertController(title: "Delete Person", message: "Delete person and all of their orders?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+    let option1 = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(actionSheet: UIAlertAction!) in (self.deletePerson(indexPath))})
+        let option3 = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {(actionSheet: UIAlertAction!) in ()})
+        
+        
+        actionSheet.addAction(option1)
+        actionSheet.addAction(option3)
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+
 
 
 

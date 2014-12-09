@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FPMainDebtViewController.swift"
-            timestampString = "439766764.067712"
+            timestampString = "439775035.258885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "410"
-            endingLineNumber = "410"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
             landmarkName = "FPMainDebtViewController"
             landmarkType = "3">
             <Locations>
@@ -208,13 +208,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FPMainDebtViewController.swift"
-            timestampString = "439766764.067712"
+            timestampString = "439775035.258885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
-            landmarkName = "swipeGestureHandler(_:)"
-            landmarkType = "5">
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "FPMainDebtViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
