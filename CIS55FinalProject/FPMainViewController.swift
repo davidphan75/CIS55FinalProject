@@ -190,12 +190,12 @@ class FPMainViewController: UIViewController, UITableViewDelegate, UIGestureReco
             println(indexPath)
             
             if(indexPath != nil){
-                self.deletePerson(indexPath!)
+                self.presentDeletePrompt(indexPath!)
             }
         }
     }
     
-    func deletePerson(indexPath:NSIndexPath){
+    func presentDeletePrompt(indexPath:NSIndexPath){
         let actionSheet = UIAlertController(title: "Delete Person", message: "Delete person and all of their orders?", preferredStyle: UIAlertControllerStyle.ActionSheet)
     let option1 = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(actionSheet: UIAlertAction!) in (self.deletePerson(indexPath))})
         let option3 = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {(actionSheet: UIAlertAction!) in ()})
@@ -207,6 +207,10 @@ class FPMainViewController: UIViewController, UITableViewDelegate, UIGestureReco
         self.presentViewController(actionSheet, animated: true, completion: nil)
     }
 
+    func deletePerson(index:NSIndexPath){
+        self.peoples.removeAtIndex(index.row)
+        self.personTableView.reloadData()
+    }
 
 
 
