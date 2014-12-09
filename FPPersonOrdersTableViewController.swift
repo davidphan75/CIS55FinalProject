@@ -49,7 +49,7 @@ class FPPersonOrdersTableViewController: UITableViewController, UINavigationBarD
         
         let frameSize = self.view.frame
         
-        let bar = UIView(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 30))
+        let bar = UIView(frame: CGRect(x: 0, y: -30, width: frameSize.width, height: 30))
         bar.backgroundColor = CustomColors.FPBackgroundGray()
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 30))
@@ -60,7 +60,14 @@ class FPPersonOrdersTableViewController: UITableViewController, UINavigationBarD
         bar.addSubview(label)
 
         self.view.addSubview(bar)
+        
+        //self.tableView.frame = CGRect(x: 0, y: 100, width: self.tableView.frame.width, height: self.tableView.frame.height)
+        
 
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+         self.tableView.frame = CGRect(x: 0, y: 30, width: self.tableView.frame.width, height: self.tableView.frame.height)
     }
 
     override func didReceiveMemoryWarning() {

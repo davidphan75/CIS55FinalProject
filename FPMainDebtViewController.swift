@@ -59,8 +59,8 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         debtCollectionView.addGestureRecognizer(longPressGestureRecognizer)
         longPressGestureRecognizer.delegate = self
         
-        let panUpGuester = UIPanGestureRecognizer(target: self, action: "panUpHandler:")
-        debtCollectionView.addGestureRecognizer(panUpGuester)
+        //let swipeGesture = UIPanGestureRecognizer(target: self, action: "swipeGestureHandler:")
+        //debtCollectionView.addGestureRecognizer(swipeGesture)
         
         
         // Do any additional setup after loading the view.
@@ -239,18 +239,50 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         if(sender.state == UIGestureRecognizerState.Began){
             var tapLocation:CGPoint = sender.locationInView(debtCollectionView)
             let indexPath = debtCollectionView.indexPathForItemAtPoint(tapLocation)
-            println(indexPath?.row)
+            println("Gesture \(indexPath?.row)")
             if(indexPath != nil){
                 self.editIndexPath = indexPath
                 let context = fetchedResultsController.managedObjectContext
                 //context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath!) as NSManagedObject)
-                performSegueWithIdentifier("ChangeDebtPerson", sender: self)
+                //performSegueWithIdentifier("ChangeDebtPerson", sender: self)
+                
+                
+                let actionSheet = UIAlertController(title: "Edit Person", message: "Delete of update person", preferredStyle: UIAlertControllerStyle.ActionSheet)
+                let option0 = UIAlertAction(title: "Edit", style: UIAlertActionStyle.Default, handler: {(actionSheet: UIAlertAction!) in (self.performSegueWithIdentifier("ChangeDebtPerson", sender: self))})
+                let option1 = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: {(actionSheet: UIAlertAction!) in (self.deletePerson(indexPath!))})
+                let option3 = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: {(actionSheet: UIAlertAction!) in ()})
+                
+                
+                actionSheet.addAction(option0)
+                actionSheet.addAction(option1)
+                actionSheet.addAction(option3)
+                
+                self.presentViewController(actionSheet, animated: true, completion: nil)
+
+                
             }
             
         }
     }
     
-    func panUpHandler(sender:UIPanGestureRecognizer){
+    func deletePerson(indexPath:NSIndexPath){
+
+        println(indexPath.row)
+        println(indexPath)
+        
+        let context = fetchedResultsController.managedObjectContext
+        context.deleteObject(fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject)
+        self.debtArray = [String]()
+        self.lowerNavBar.topItem?.title = ""
+        self.indexPath = nil
+        let error = NSErrorPointer()
+        fetchedResultsController.managedObjectContext.save(error)
+        //self.debtTableView.reloadData()
+
+    }
+    
+    /*
+    func swipeGestureHandler(sender:UIPanGestureRecognizer){
         if(sender.state == UIGestureRecognizerState.Began){
             var tapLocation:CGPoint = sender.locationInView(debtCollectionView)
             let indexPath = debtCollectionView.indexPathForItemAtPoint(tapLocation)
@@ -269,6 +301,7 @@ class FPMainDebtViewController: UIViewController, UITableViewDelegate, UICollect
         }
     }
     
+    */
     
     // MARK: -------------------- Table view data source
     

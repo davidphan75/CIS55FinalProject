@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FPMainDebtViewController.swift"
-            timestampString = "439690236.178759"
+            timestampString = "439775035.258885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
             landmarkName = "FPMainDebtViewController"
             landmarkType = "3">
             <Locations>
@@ -192,11 +192,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FPPersonOrdersTableViewController.swift"
-            timestampString = "439676926.670186"
+            timestampString = "439763938.105769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -208,12 +208,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FPMainDebtViewController.swift"
-            timestampString = "439690073.484201"
+            timestampString = "439775035.258885"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
-            landmarkName = "panUpHandler(_:)"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "FPMainDebtViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FPMainDebtViewController.swift"
+            timestampString = "439765961.057196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "longPressHandler(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

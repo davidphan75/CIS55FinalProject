@@ -71,7 +71,7 @@ class FPDisplayBillViewController: UIViewController, UINavigationBarDelegate {
             partyGrandTotal += grandtotal
         }
         
-        bill += "\r\t\t\t\t\t PartySubtotal:   \t\(formatDouble(partySubTotal))\r"
+        bill += "\r\t\t\t\t\t PartySubtotal:   \t\t\(formatDouble(partySubTotal))\r"
         bill += "\t\t\t\t\t PartyGrandtotal:\t\(formatDouble(partyGrandTotal))\r"
         BillTextView.text = bill
     }
